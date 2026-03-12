@@ -1,5 +1,6 @@
-export const App = () => (
-    <div className="flex h-screen items-center justify-center text-red-600 font-bold text-4xl">
-        BUFONIO
-    </div>
-)
+import { RouterProvider } from "react-router-dom";
+import { router } from "@/router/router.jsx";
+
+export const App = () => {
+  return <RouterProvider router={router} />;
+};
