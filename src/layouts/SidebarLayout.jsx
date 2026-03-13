@@ -19,7 +19,7 @@ export const SidebarLayout = () => {
       />
       <div className="flex h-[calc(100dvh-65px)] relative overflow-hidden">
         <aside
-          className={`fixed md:static top-0 left-0 h-screen md:h-auto w-50 z-50 transform transition-transform duration-300 ease-out 
+          className={`fixed md:static top-0 left-0 h-dvh md:h-auto w-50 z-50 transform transition-transform duration-300 ease-out 
             ${isOpen ? "translate-x-0" : "-translate-x-full"} md:transform-none md:transition-none md:translate-x-0`}
         >
           <Sidebar />
