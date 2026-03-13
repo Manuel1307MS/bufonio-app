@@ -17,7 +17,7 @@ export const SidebarLayout = () => {
         className={`fixed inset-0 z-45 md:hidden transition-opacity duration-300 ${isOpen ? "bg-black/30 opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={closeSidebar}
       />
-      <div className="flex h-[calc(100vh-65px)] relative overflow-hidden">
+      <div className="flex h-[calc(100dvh-65px)] relative overflow-hidden">
         <aside
           className={`fixed md:static top-0 left-0 h-screen md:h-auto w-50 z-50 transform transition-transform duration-300 ease-out 
             ${isOpen ? "translate-x-0" : "-translate-x-full"} md:transform-none md:transition-none md:translate-x-0`}

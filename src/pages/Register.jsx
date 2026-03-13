@@ -22,7 +22,7 @@ export const Register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-[calc(100vh-65px)]">
+    <div className="flex items-center justify-center h-[calc(100dvh-65px)]">
       <div className="w-full max-w-100 space-y-6 md:border md:border-black/10 md:rounded-xl bg-white p-8">
         <div className="flex flex-col space-y-1.5">
           <h2 className="text-2xl font-semibold tracking-tight">Registro</h2>
