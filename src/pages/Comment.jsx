@@ -22,7 +22,7 @@ export const Comment = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-65px)] bg-white flex items-center justify-center p-4">
+    <div className="h-[calc(100dvh-65px)] bg-white flex items-center justify-center p-4">
       <div className="p-8 md:border md:border-black/10 md:rounded-xl w-full max-w-lg flex flex-col gap-6">
         <div className="text-center">
           <h1 className="text-3xl font-semibold tracking-tight mb-2">
