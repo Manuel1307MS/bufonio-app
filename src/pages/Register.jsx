@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { useRegister } from "@/hooks/auth/useRegister";
 import { Link } from "react-router-dom";
+import { useRegister } from "@/hooks/auth/useRegister";
+import { useAuth } from "@/hooks/auth/useAuth";
+import { LoginGoogle } from "@/components/LoginGoogle";
 
 export const Register = () => {
   const { register, loading, error, success } = useRegister();
+  const { setAuth } = useAuth();
 
   const [formData, setFormData] = useState({
     nameUser: "",
@@ -97,6 +100,10 @@ export const Register = () => {
               ¿Ya tienes cuenta? Inicia sesión
             </Link>
           </div>
+
+          <hr className="border-black/10" />
+
+          <LoginGoogle setAuth={setAuth} />
         </form>
       </div>
     </div>

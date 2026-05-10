@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { loginUser } from "@/services/loginService";
+import { loginUser, loginWithGoogle } from "@/services/loginService";
 import { setAccessToken } from "@/services/apiService";
 
 export const useLogin = () => {
@@ -24,5 +24,22 @@ export const useLogin = () => {
     }
   };
 
-  return { login, loading, error, success };
+  const loginGoogle = async (idToken) => {
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+
+    try {
+      const data = await loginWithGoogle(idToken);
+      setAccessToken(data.accessToken);
+      setSuccess(true);
+      return data;
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { login, loginGoogle, loading, error, success };
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLogin } from "@/hooks/auth/useLogin";
 import { useAuth } from "@/hooks/auth/useAuth";
+import { LoginGoogle } from "@/components/LoginGoogle";
 
 export const Login = () => {
   const { login, loading, error } = useLogin();
@@ -88,6 +89,8 @@ export const Login = () => {
               ¿No tienes cuenta? Regístrate
             </Link>
           </div>
+          <hr className="border-black/10" />
+          <LoginGoogle setAuth={setAuth} />
         </form>
       </div>
     </div>

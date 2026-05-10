@@ -18,3 +18,20 @@ export const loginUser = async (formData) => {
 
   return response.json();
 };
+
+export const loginWithGoogle = async (idToken) => {
+  const response = await fetch(`${API_BASE_URL}/api/auth/google`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({ idToken }),
+  });
+
+  if (!response.ok) {
+    await handleError(response);
+  }
+
+  return response.json();
+};
