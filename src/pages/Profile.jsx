@@ -27,7 +27,7 @@ export const Profile = () => {
 
   return (
     <div className="h-full p-6 md:p-16">
-      <div className="flex flex-col bg-white border border-black/10 rounded-2xl p-8 mb-8 gap-4">
+      <div className="flex flex-col bg-white border border-black/10 rounded-2xl p-8 gap-4">
         {userLoading && (
           <div className="flex justify-center">
             <SpinnerIcon />
@@ -39,26 +39,30 @@ export const Profile = () => {
         {user && (
           <div className="flex flex-col gap-4">
             <div>
-              <span>Nombre de usuario:</span>
+              <span className="font-semibold">Nombre de usuario:</span>
               <p>{user.nameUser}</p>
             </div>
 
+            <hr className="border-black/10" />
+
             <div>
-              <span>Email:</span>
+              <span className="font-semibold">Email:</span>
               <p>{user.emailUser}</p>
+            </div>
+
+            <hr className="border-black/10" />
+
+            <div className="flex justify-end">
+              <button
+                onClick={handleLogout}
+                className="inline-flex gap-1 h-10 w-auto items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-red-500 hover:bg-red-500/20 transition-colors cursor-pointer"
+              >
+                <OutIcon width={20} height={20} />
+                Cerrar sesión
+              </button>
             </div>
           </div>
         )}
-
-        <div>
-          <button
-            onClick={handleLogout}
-            className="inline-flex gap-1 h-10 w-full items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-red-500 hover:bg-red-500/20 transition-colors cursor-pointer"
-          >
-            <OutIcon width={20} height={20} />
-            Cerrar sesión
-          </button>
-        </div>
       </div>
     </div>
   );
