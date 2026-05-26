@@ -20,15 +20,15 @@ export const Sidebar = () => {
           <HomeIcon width={20} height={20} />
           Inicio
         </NavLink>
-
-        <hr className="my-2 border-black/10" />
-
-        <SidebarChannelSection />
       </div>
 
-      <div>
-        <hr className="my-2 border-black/10" />
+      <hr className="my-2 border-black/10" />
 
+      <SidebarChannelSection />
+
+      <hr className="my-2 border-black/10" />
+
+      <div>
         <div className="flex gap-2">
           <div className="flex-4">
             <NavLink
