@@ -12,10 +12,10 @@ export const ParchmentList = ({ parchments, loading, error }) => {
         </div>
       )}
 
-      {error && <p>Error al cargar pergaminos</p>}
+      {error && <p>Error al cargar pergaminos.</p>}
 
       {!loading && !error && parchments.length === 0 && (
-        <p className="text-black/50">No hay parchments disponibles</p>
+        <p className="text-black/50">No hay pergaminos disponibles.</p>
       )}
 
       {parchments.map((p) => (

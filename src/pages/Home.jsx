@@ -1,11 +1,12 @@
 import { useUserSummary } from "@/hooks/user/useUserSummary";
 import { SpinnerIcon } from "@/components/icons/SpinnerIcon";
+import { ChannelSummaryList } from "@/components/channel/ChannelSummaryList";
 
 export const Home = () => {
   const { userSummary, loading, error } = useUserSummary();
 
   return (
-    <div className="h-full p-6 md:p-16">
+    <main className="h-full p-6 md:p-16 flex flex-col overflow-y-auto custom-scroll gap-6">
       <div className="flex flex-col bg-white border border-black/10 rounded-2xl p-8 mb-8">
         {loading && (
           <div className="flex justify-center">
@@ -13,7 +14,7 @@ export const Home = () => {
           </div>
         )}
 
-        {error && <p>Error al cargar el usuario</p>}
+        {error && <p className="text-center">Error al cargar el usuario.</p>}
 
         {userSummary && (
           <div>
@@ -22,6 +23,8 @@ export const Home = () => {
           </div>
         )}
       </div>
-    </div>
+
+      <ChannelSummaryList />
+    </main>
   );
 };

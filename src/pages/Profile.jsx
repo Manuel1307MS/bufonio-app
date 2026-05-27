@@ -34,7 +34,9 @@ export const Profile = () => {
           </div>
         )}
 
-        {userError && <p>Error al cargar el usuario</p>}
+        {userError && (
+          <p className="text-center">Error al cargar el usuario.</p>
+        )}
 
         {user && (
           <div className="flex flex-col gap-4">

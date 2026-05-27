@@ -61,3 +61,15 @@ export const deleteChannelByToken = async (tokenChannel) => {
 
   return true;
 };
+
+export const getChannelsSummaries = async () => {
+  const response = await apiFetch("/api/channels/summaries", {
+    method: "GET",
+  });
+
+  if (!response.ok) {
+    await handleError(response);
+  }
+
+  return response.json();
+};
